@@ -1,0 +1,1 @@
+This is  a simple fullstack app created using mongodb, express, react and nodejs.
