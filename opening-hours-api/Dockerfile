@@ -1,20 +1,19 @@
 # Using the official Node.js image as base
-FROM node:20.11.0
+FROM node:16
 
-# Seting working directory
+# Setting working directory
 WORKDIR /app
 
-# Copying package.json and package-lock.json
+# Copying package files and installing dependencies
 COPY package*.json ./
-
-# Installing dependencies
 RUN npm install
 
 # Copying the rest of the application code
 COPY . .
 
-# Exposeing the port on which the application runs
+# Exposing the port on which the application runs
 EXPOSE 8080
 
 # Command to run the application
 CMD ["npm", "run", "dev"]
+
