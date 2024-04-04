@@ -122,10 +122,8 @@ app.post("/logout", authenticateUser, (req, res) => {
 app.post("/opening-hours", authenticateUser, async (req, res) => {
 	try {
 		const { dayOfWeek, openTime, closeTime } = req.body;
-		if(dayOfWeek<0 || dayOfWeek>6){
-			return res
-				.status(400)
-				.json({ message: "Invalid Day of week." });
+		if (dayOfWeek < 0 || dayOfWeek > 6) {
+			return res.status(400).json({ message: "Invalid Day of week." });
 		}
 		const openingHour = await OpeningHour.create({
 			dayOfWeek,

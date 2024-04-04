@@ -17,12 +17,19 @@ const OpeningHoursList = () => {
 				console.error("Error fetching opening hours:", error);
 			}
 		};
-
 		fetchOpeningHours();
 	}, []);
 
 	const getDayOfWeekString = (dayOfWeek) => {
-		const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		const daysOfWeek = [
+			"Sunday",
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday",
+			"Saturday",
+		];
 		return daysOfWeek[dayOfWeek];
 	};
 
